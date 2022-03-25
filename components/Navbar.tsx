@@ -23,16 +23,13 @@ function Navbar() {
         </Link>
         <div className={s.navbar__links}>
           <Link href="/" passHref>
-            <a className={s.navbar__link}>New Releases</a>
+            <a className={s.navbar__link}>Hombre</a>
           </Link>
           <Link href="/" passHref>
-            <a className={s.navbar__link}>Men</a>
+            <a className={s.navbar__link}>Mujer</a>
           </Link>
           <Link href="/" passHref>
-            <a className={s.navbar__link}>Women</a>
-          </Link>
-          <Link href="/" passHref>
-            <a className={s.navbar__link}>Sales</a>
+            <a className={s.navbar__link}>Descuentos</a>
           </Link>
         </div>
         <div className={s.navbar__info}>
