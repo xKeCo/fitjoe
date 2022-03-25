@@ -16,10 +16,12 @@ function Navbar() {
   return (
     <>
       <div className={s.navbar}>
-        <Link href="/">
-          <div className={s.navbar__imageContainer}>
-            <Image src={Logo} alt="Logo" width={50} height={50} />
-          </div>
+        <Link href="/" passHref>
+          <a>
+            <div className={s.navbar__imageContainer}>
+              <Image src={Logo} alt="Logo" width={50} height={50} />
+            </div>
+          </a>
         </Link>
         <div className={s.navbar__links}>
           <Link href="/" passHref>
