@@ -15,7 +15,7 @@ function TrendingCard({ title, src }: TrendingCardProps) {
             src={src}
             height="100%"
             width="100%"
-            alt="Relaxing app background"
+            alt="Imagen de producto"
           />
         </Card.Body>
         <Card.Footer

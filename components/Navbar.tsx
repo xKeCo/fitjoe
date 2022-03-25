@@ -1,11 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 
-// Svgs and images
-import Logo from "../public/logo.svg";
-import heart from "../public/heart.svg";
-import notification from "../public/notification.svg";
-
 // Styles
 import s from "./styles/Navbar.module.css";
 
@@ -19,7 +14,7 @@ function Navbar() {
         <Link href="/" passHref>
           <a>
             <div className={s.navbar__imageContainer}>
-              <Image src={Logo} alt="Logo" width={50} height={50} />
+              <Image src="/logo.svg" alt="Logo" width={50} height={50} />
             </div>
           </a>
         </Link>
@@ -36,18 +31,18 @@ function Navbar() {
         </div>
         <div className={s.navbar__info}>
           <div className={s.navbar__info__icon}>
-            <Image src={heart} alt="Heart" width={24} height={24} />
+            <Image src="/heart.svg" alt="Heart" width={24} height={24} />
           </div>
           <div className={s.navbar__info__icon}>
             <Image
-              src={notification}
+              src="/notification.svg"
               alt="Notification"
               width={24}
               height={24}
             />
           </div>
           <div className={s.navbar__info__avatar}>
-            <Avatar squared src="../defaultPhoto.svg" pointer />
+            <Avatar squared src="../defaultPhoto.svg" pointer alt="avatar" />
           </div>
         </div>
       </div>

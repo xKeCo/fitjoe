@@ -30,17 +30,23 @@ const Home: NextPage = () => {
                 </a>
               </Link>
             </div>
-            <img className={s.hero__image} src="/mainWeb.png" alt="Logo" />
+            <img
+              className={s.hero__image}
+              src="/mainWeb.png"
+              alt="Logo"
+              width="100%"
+            />
             <img
               className={s.hero__image2}
               src="/mainResponsive.png"
               alt="Logo"
+              width="100%"
             />
           </div>
-          <h3 className={s.trending__title}>Tendencias</h3>
+          <h2 className={s.trending__title}>Tendencias</h2>
           <div className={s.trending}>
             <div className={s.trending__products}>
-              <TrendingCard src="/pic1.png" title="The Bujoe Long" />
+              <TrendingCard src="/bujoeLong.png" title="The Bujoe Long" />
               <TrendingCard src="/pryzon.png" title="Pryzon T-shirt" />
               <TrendingCard src="/slevjoe.png" title="The Slevjoe" />
               <TrendingCard src="/fitjoe.svg" title="Mas Productos" />
