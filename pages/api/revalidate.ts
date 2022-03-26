@@ -7,6 +7,7 @@ export default async function handler(
   res: NextApiResponse
 ) {
   console.log(req.body.data.localizations[0].slug);
+  console.log(req.headers);
 
   const isValid = verifyWebhookSignature({
     body: req.body,
