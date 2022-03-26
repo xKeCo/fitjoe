@@ -17,9 +17,9 @@ export default async function handler(
   });
 
   // Check for secret to confirm this is a valid request
-  if (isValid) {
-    return res.status(401).json({ message: "Invalid token" });
-  }
+  // if (isValid) {
+  //   return res.status(401).json({ message: "Invalid token" });
+  // }
   try {
     await res.unstable_revalidate(req.body.data.localizations[0].slug);
     return res.json({ revalidated: true });
