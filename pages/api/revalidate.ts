@@ -4,6 +4,8 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
+  console.log(req.body);
+  console.log(req.headers);
   // Check for secret to confirm this is a valid request
   if (req.headers["gcms-signature"] !== process.env.MY_SECRET_TOKEN) {
     return res.status(401).json({ message: "Invalid token" });
