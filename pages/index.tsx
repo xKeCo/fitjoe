@@ -1,4 +1,4 @@
-import type { NextPage } from "next";
+import type { GetStaticProps, NextPage } from "next";
 import Image from "next/image";
 
 // Styles
@@ -13,6 +13,8 @@ import Seo from "../components/Seo";
 import TrendingCard from "../components/TrendingCard";
 import { Button } from "@nextui-org/react";
 import Link from "next/link";
+import client from "gcmsClient";
+import { gql } from "graphql-request";
 
 const Home: NextPage = () => {
   return (
@@ -24,7 +26,7 @@ const Home: NextPage = () => {
           <div className={s.hero}>
             <div className={s.hero__detail}>
               <h1 className={s.hero__detail__title}>Nueva Sleevjoe OX </h1>
-              <Link href={"/product/slevjoeXO"} passHref>
+              <Link href={"/product/sleevjoe-ox"} passHref>
                 <a>
                   <Button className={s.hero__detail__button}> Ver más </Button>
                 </a>
