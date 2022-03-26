@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@graphcms/utils": "^1.1.0",
     "@nextui-org/react": "^1.0.4-beta.5",
     "graphql": "^16.3.0",
     "graphql-request": "^4.2.0",
