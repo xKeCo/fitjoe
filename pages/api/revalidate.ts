@@ -6,7 +6,7 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  console.log(req.body.data.localizations[0].slug);
+  console.log(req.body.data.slug);
   console.log(req.headers);
 
   const isValid = verifyWebhookSignature({
@@ -20,9 +20,7 @@ export default async function handler(
   //   return res.status(401).json({ message: "Invalid token" });
   // }
   try {
-    await res.unstable_revalidate(
-      `/product/${req.body.data.localizations[0].slug}`
-    );
+    await res.unstable_revalidate(`/product/${req.body.data.slug}`);
     return res.json({ revalidated: true });
   } catch (err) {
     console.error(err);
