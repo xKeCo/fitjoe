@@ -23,6 +23,7 @@ export default async function handler(
     await res.unstable_revalidate(`/${req.body.data.localizations[0].slug}`);
     return res.json({ revalidated: true });
   } catch (err) {
+    console.error(err);
     // If there was an error, Next.js will continue
     // to show the last successfully generated page
     return res.status(500).send("Error revalidating");
