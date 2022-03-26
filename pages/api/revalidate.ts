@@ -21,7 +21,7 @@ export default async function handler(
     return res.status(401).json({ message: "Invalid token" });
   }
   try {
-    await res.unstable_revalidate(req.body.data.slug);
+    await res.unstable_revalidate(req.body.data.localizations[0].slug);
     return res.json({ revalidated: true });
   } catch (err) {
     // If there was an error, Next.js will continue
