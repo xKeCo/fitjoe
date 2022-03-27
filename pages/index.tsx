@@ -75,12 +75,16 @@ const Home: NextPage = () => {
           </div>
         </main>
       </div>
-      <a href="/api/auth/login">Login</a>
+      <Link href="/api/auth/login">
+        <a>Login</a>
+      </Link>
 
       {user && (
         <div>
           {user.name}
-          <a href="/api/auth/logout">Logout</a>
+          <Link href="/api/auth/logout">
+            <a>Logout</a>
+          </Link>
         </div>
       )}
       <Footer />
