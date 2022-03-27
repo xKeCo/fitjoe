@@ -4,6 +4,8 @@ import Image from "next/image";
 // Styles
 import s from "../styles/Home.module.css";
 
+import { useUser } from "@auth0/nextjs-auth0";
+
 // Local Components
 import Navbar from "../components/Navbar/Navbar";
 import Seo from "../components/Seo";
@@ -13,6 +15,10 @@ import Link from "next/link";
 import Footer from "components/Footer/Footer";
 
 const Home: NextPage = () => {
+  const { user, error, isLoading } = useUser();
+
+  if (isLoading) return <div>Loading...</div>;
+  if (error) return <div>{error.message}</div>;
   return (
     <>
       <Seo />
@@ -63,12 +69,20 @@ const Home: NextPage = () => {
               <TrendingCard
                 src="/fitjoe.svg"
                 title="Mas Productos"
-                href="men"
+                href="/men"
               />
             </div>
           </div>
         </main>
       </div>
+      <a href="/api/auth/login">Login</a>
+
+      {user && (
+        <div>
+          {user.name}
+          <a href="/api/auth/logout">Logout</a>
+        </div>
+      )}
       <Footer />
     </>
   );
