@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 // Styles
-import s from "./styles/Navbar.module.css";
+import s from "./Navbar.module.css";
 
 // NextUI Components
 import { Avatar } from "@nextui-org/react";
@@ -19,7 +19,7 @@ function Navbar() {
           </a>
         </Link>
         <div className={s.navbar__links}>
-          <Link href="/" passHref>
+          <Link href="/men" passHref>
             <a className={s.navbar__link}>Hombre</a>
           </Link>
           <Link href="/" passHref>
@@ -46,12 +46,12 @@ function Navbar() {
           </div>
         </div>
       </div>
-      <div className={s.navbar__ad}>
+      {/* <div className={s.navbar__ad}>
         <p className={s.navbar__ad__text}>
           Envios gratis a partir de 100.000 COP. Retornos gratis y productos
           exclusivos.
         </p>
-      </div>
+      </div> */}
     </>
   );
 }

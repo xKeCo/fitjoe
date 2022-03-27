@@ -15,6 +15,20 @@ export const productQuery = gql`
   }
 `;
 
+export const allProductQuery = gql`
+  query {
+    products {
+      id
+      name
+      price
+      slug
+      images {
+        url
+      }
+    }
+  }
+`;
+
 export const productSlugQuery = gql`
   query {
     products {

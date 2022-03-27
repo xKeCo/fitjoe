@@ -4,9 +4,10 @@ import Link from "next/link";
 interface TrendingCardProps {
   title: string;
   src: string;
+  href: string;
 }
 
-function TrendingCard({ title, src }: TrendingCardProps) {
+function TrendingCard({ title, src, href }: TrendingCardProps) {
   return (
     <>
       <Card cover css={{ w: "100%", p: 0 }}>
@@ -32,12 +33,7 @@ function TrendingCard({ title, src }: TrendingCardProps) {
             <Col>
               <Row>
                 <Col>
-                  <Text
-                    size={18}
-                    weight="bold"
-                    // transform="uppercase"
-                    color="#FFF"
-                  >
+                  <Text size={18} weight="bold" color="#FFF">
                     {title}
                   </Text>
                 </Col>
@@ -45,7 +41,7 @@ function TrendingCard({ title, src }: TrendingCardProps) {
             </Col>
             <Col>
               <Row justify="flex-end">
-                <Link href={`/product/${title}`} passHref>
+                <Link href={href} passHref>
                   <a>
                     <Button
                       flat

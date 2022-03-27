@@ -1,12 +1,11 @@
 .navbar {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
   align-items: center;
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
   padding: 1rem 2rem;
-  /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
 }
 
 .navbar__imageContainer {
@@ -19,7 +18,7 @@
 .navbar__links {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 2rem;
 }
 
@@ -34,7 +33,7 @@
 .navbar__info {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   gap: 0.5rem;
 }
 
@@ -83,5 +82,8 @@
   }
   .navbar__ad {
     padding: 10px 2rem;
+  }
+  .navbar {
+    grid-template-columns: repeat(2, 1fr);
   }
 }

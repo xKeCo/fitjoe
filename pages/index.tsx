@@ -1,20 +1,16 @@
-import type { GetStaticProps, NextPage } from "next";
+import type { NextPage } from "next";
 import Image from "next/image";
 
 // Styles
 import s from "../styles/Home.module.css";
 
-// Svgs and images
-import Product from "../public/foto.png";
-
 // Local Components
-import Navbar from "../components/Navbar";
+import Navbar from "../components/Navbar/Navbar";
 import Seo from "../components/Seo";
 import TrendingCard from "../components/TrendingCard";
 import { Button } from "@nextui-org/react";
 import Link from "next/link";
-import client from "gcmsClient";
-import { gql } from "graphql-request";
+import Footer from "components/Footer/Footer";
 
 const Home: NextPage = () => {
   return (
@@ -45,35 +41,35 @@ const Home: NextPage = () => {
               width="100%"
             />
           </div>
+
           <h2 className={s.trending__title}>Tendencias</h2>
           <div className={s.trending}>
             <div className={s.trending__products}>
-              <TrendingCard src="/bujoeLong.png" title="The Bujoe Long" />
-              <TrendingCard src="/pryzon.png" title="Pryzon T-shirt" />
-              <TrendingCard src="/slevjoe.png" title="The Slevjoe" />
-              <TrendingCard src="/fitjoe.svg" title="Mas Productos" />
+              <TrendingCard
+                src="/bujoeLong.png"
+                title="The Bujoe Long"
+                href="/product/the-bujoe-long"
+              />
+              <TrendingCard
+                src="/pryzon.png"
+                title="Pryzon T-shirt"
+                href="/product/pryzon"
+              />
+              <TrendingCard
+                src="/slevjoe.png"
+                title="The Slevjoe"
+                href="/product/slevjoe"
+              />
+              <TrendingCard
+                src="/fitjoe.svg"
+                title="Mas Productos"
+                href="men"
+              />
             </div>
           </div>
         </main>
-
-        <footer className={s.footer}>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Powered by
-            <span className={s.logo}>
-              <Image
-                src="/vercel.svg"
-                alt="Vercel Logo"
-                width={72}
-                height={16}
-              />
-            </span>
-          </a>
-        </footer>
       </div>
+      <Footer />
     </>
   );
 };

@@ -1,5 +1,4 @@
 import client from "gcmsClient";
-import { gql } from "graphql-request";
 import { productQuery } from "graphql/productQuery";
 import { GetStaticProps } from "next";
 import { ProductProps } from "pages/product/[slug]";
