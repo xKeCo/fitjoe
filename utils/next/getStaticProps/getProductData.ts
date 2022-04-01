@@ -6,20 +6,27 @@ import { ProductProps } from "pages/product/[slug]";
 export const getProductData: GetStaticProps = async ({ params }) => {
   const slug = params?.slug as string;
 
-  const data: { products: ProductProps[] } = await client.request(
-    productQuery,
-    {
-      slug,
-    }
-  );
+  try {
+    const data: { products: ProductProps[] } = await client.request(
+      productQuery,
+      {
+        slug,
+      }
+    );
 
-  if (!data.products.length) {
+    if (!data.products.length) {
+      return {
+        notFound: true,
+      };
+    }
+
+    return {
+      props: { product: data.products[0] },
+    };
+  } catch (err) {
+    console.log(err);
     return {
       notFound: true,
     };
   }
-
-  return {
-    props: { product: data.products[0] },
-  };
 };

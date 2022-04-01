@@ -11,6 +11,6 @@ export const getProductPaths: GetStaticPaths = async () => {
         slug: product.slug,
       },
     })),
-    fallback: false,
+    fallback: "blocking",
   };
 };

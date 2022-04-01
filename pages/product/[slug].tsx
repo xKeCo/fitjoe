@@ -1,5 +1,4 @@
 import { GetStaticPaths, GetStaticProps } from "next";
-import Image from "next/image";
 
 // GetStaticProps and GetStaticPaths
 import { getProductData } from "utils/next/getStaticProps/getProductData";

@@ -17,12 +17,16 @@ export default async function handler(
     return res.status(401).json({ message: "Invalid token" });
   }
 
-  console.log(req.body.data.localizations[0].slug);
   try {
-    await res.unstable_revalidate(
-      `/product/${req.body.data.localizations[0].slug}`
-    );
-    return res.json({ revalidated: true });
+    if (req.body.operation === "publish") {
+      await res.unstable_revalidate(
+        `/product/${req.body.data.localizations[0].slug}`
+      );
+      await res.unstable_revalidate("/men");
+      return res.json({ revalidated: true });
+    } else {
+      return res.json({ revalidated: false });
+    }
   } catch (err) {
     console.error(err);
     return res.status(500).send("Error revalidating");
