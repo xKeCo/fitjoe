@@ -16,6 +16,8 @@ export default async function handler(
   if (!isValid) {
     return res.status(401).json({ message: "Invalid token" });
   }
+
+  console.log(req.body.data.localizations[0].slug);
   try {
     await res.unstable_revalidate(
       `/product/${req.body.data.localizations[0].slug}`
