@@ -6,13 +6,6 @@
   justify-content: space-between;
   padding: 0 2rem;
 }
-.product__images__container {
-  flex-wrap: wrap;
-  justify-content: space-around;
-  max-width: 750px;
-  width: 100%;
-  gap: 1rem;
-}
 
 .product__images {
   display: flex;
@@ -88,6 +81,7 @@
   }
 
   .product {
+    display: flex;
     flex-direction: column;
   }
 
