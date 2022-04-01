@@ -21,7 +21,12 @@ export interface ProductProps {
   description: string;
   price: number;
   images: {
+    id: string;
     url: string;
+  }[];
+  categories: {
+    id: string;
+    name: string;
   }[];
 }
 
@@ -36,7 +41,7 @@ export default function ProductPage({ product }: { product: ProductProps }) {
           <div className={s.product__images}>
             {product.images.map((image) => (
               <img
-                key={image.url}
+                key={image.id}
                 src={image.url}
                 alt={product.name}
                 width="45%"
@@ -45,9 +50,19 @@ export default function ProductPage({ product }: { product: ProductProps }) {
           </div>
         </div>
         <div className={s.product__details}>
-          <h2 className={s.product__name}>{product.name}</h2>
-          <p>{product.description}</p>
-          <p>{product.price} COP</p>
+          <p className={s.product__name}>{product.name}</p>
+          <p className={s.product__categorie}>{product.categories[0].name}</p>
+          <p className={s.product__description}>{product.description}</p>
+          <p className={s.product__price}>$ {product.price} COP</p>
+          <hr />
+          <h3 className={s.product__sizes__text}>Tallas disponibles</h3>
+          <p className={s.product__idk}>Guia de talla</p>
+          <div className={s.product__sizes__container}>
+            <div className={s.product__size}>S</div>
+            <div className={s.product__size}>M</div>
+            <div className={s.product__size}>L</div>
+            <div className={s.product__size}>XL</div>
+          </div>
         </div>
       </div>
       <Footer />

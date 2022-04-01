@@ -6,12 +6,13 @@ import BtnSlider from "./btnSlider/BtnSlider";
 // Styles
 import s from "./Slider.module.css";
 
-export interface ProductProps {
+export interface ImagesProps {
   images: {
+    id: string;
     url: string;
   }[];
 }
-function Slider({ images }: ProductProps) {
+function Slider({ images }: ImagesProps) {
   const [slideIndex, setSlideIndex] = useState(1);
 
   const nextSlide = () => {
@@ -37,7 +38,7 @@ function Slider({ images }: ProductProps) {
           className={
             slideIndex === index + 1 ? `${s.slide} ${s.active__anim}` : s.slide
           }
-          key={image.url}
+          key={image.id}
         >
           <img src={image.url} alt="image" width="400px" />
         </div>

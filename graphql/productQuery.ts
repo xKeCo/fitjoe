@@ -9,7 +9,12 @@ export const productQuery = gql`
       description
       price
       images {
+        id
         url
+      }
+      categories {
+        id
+        name
       }
     }
   }
@@ -23,7 +28,12 @@ export const allProductQuery = gql`
       price
       slug
       images {
+        id
         url
+      }
+      categories {
+        id
+        name
       }
     }
   }

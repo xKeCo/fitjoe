@@ -1,5 +1,4 @@
 import s from "./BtnSlider.module.css";
-import leftArrow from "/leftArrow.svg";
 
 interface BtnSliderProps {
   moveSlide: () => void;

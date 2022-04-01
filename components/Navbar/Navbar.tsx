@@ -18,7 +18,7 @@ function Navbar() {
             </div>
           </a>
         </Link>
-        <div className={s.navbar__links}>
+        {/* <div className={s.navbar__links}>
           <Link href="/men" passHref>
             <a className={s.navbar__link}>Hombre</a>
           </Link>
@@ -28,7 +28,7 @@ function Navbar() {
           <Link href="/" passHref>
             <a className={s.navbar__link}>Descuentos</a>
           </Link>
-        </div>
+        </div> */}
         <div className={s.navbar__info}>
           <div className={s.navbar__info__icon}>
             <Image src="/heart.svg" alt="Heart" width={24} height={24} />
