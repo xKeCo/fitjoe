@@ -4,8 +4,6 @@ import Image from "next/image";
 // Styles
 import s from "../styles/Home.module.css";
 
-import { useUser } from "@auth0/nextjs-auth0";
-
 // Local Components
 import Navbar from "../components/Navbar/Navbar";
 import Seo from "../components/Seo";
@@ -15,10 +13,6 @@ import Link from "next/link";
 import Footer from "components/Footer/Footer";
 
 const Home: NextPage = () => {
-  const { user, error, isLoading } = useUser();
-
-  if (isLoading) return <div>Loading...</div>;
-  if (error) return <div>{error.message}</div>;
   return (
     <>
       <Seo />
@@ -75,18 +69,6 @@ const Home: NextPage = () => {
           </div>
         </main>
       </div>
-      <Link href="/api/auth/login">
-        <a>Login</a>
-      </Link>
-
-      {user && (
-        <div>
-          {user.name}
-          <Link href="/api/auth/logout">
-            <a>Logout</a>
-          </Link>
-        </div>
-      )}
       <Footer />
     </>
   );

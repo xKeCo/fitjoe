@@ -41,17 +41,17 @@ function Navbar() {
               height={24}
             />
           </div>
-          <div className={s.navbar__info__avatar}>
+          {/* <div className={s.navbar__info__avatar}>
             <Avatar squared src="../defaultPhoto.svg" pointer alt="avatar" />
-          </div>
+          </div> */}
         </div>
       </div>
-      {/* <div className={s.navbar__ad}>
+      <div className={s.navbar__ad}>
         <p className={s.navbar__ad__text}>
           Envios gratis a partir de 100.000 COP. Retornos gratis y productos
           exclusivos.
         </p>
-      </div> */}
+      </div>
     </>
   );
 }

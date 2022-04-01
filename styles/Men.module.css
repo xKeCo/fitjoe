@@ -11,9 +11,8 @@
 
 .productList__section__title {
   max-width: 1200px;
-  margin: 0 auto;
   padding: 0 2rem;
-  margin-bottom: 2rem;
+  margin: 2rem auto 3rem auto;
 }
 
 .productList__item__image__container {
