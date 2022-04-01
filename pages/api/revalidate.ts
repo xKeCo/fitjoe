@@ -6,9 +6,6 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  console.log(req.body.data.localizations[0].slug);
-  console.log(req.headers);
-
   const isValid = verifyWebhookSignature({
     body: req.body,
     signature: req.headers["gcms-signature"],

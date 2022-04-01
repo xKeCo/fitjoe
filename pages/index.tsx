@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import Image from "next/image";
+import Link from "next/link";
 
 // Styles
 import s from "../styles/Home.module.css";
@@ -8,9 +8,10 @@ import s from "../styles/Home.module.css";
 import Navbar from "../components/Navbar/Navbar";
 import Seo from "../components/Seo";
 import TrendingCard from "../components/TrendingCard";
-import { Button } from "@nextui-org/react";
-import Link from "next/link";
 import Footer from "components/Footer/Footer";
+
+// Next UI Components
+import { Button } from "@nextui-org/react";
 
 const Home: NextPage = () => {
   return (

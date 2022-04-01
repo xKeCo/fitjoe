@@ -1,5 +1,7 @@
-import { Button, Col, Row, Text, Card } from "@nextui-org/react";
 import Link from "next/link";
+
+// Next UI Components
+import { Button, Col, Row, Text, Card } from "@nextui-org/react";
 
 interface TrendingCardProps {
   title: string;

@@ -1,11 +1,18 @@
 import { GetStaticPaths, GetStaticProps } from "next";
-import React from "react";
+import Image from "next/image";
+
+// GetStaticProps and GetStaticPaths
 import { getProductData } from "utils/next/getStaticProps/getProductData";
 import { getProductPaths } from "utils/next/getStaticPaths/getProductPaths";
-import Image from "next/image";
+
+// Local Components
 import Seo from "components/Seo";
 import Navbar from "components/Navbar/Navbar";
 import Footer from "components/Footer/Footer";
+
+// Styles
+import s from "../../styles/Product.module.css";
+import Slider from "components/Slider/Slider";
 
 export interface ProductProps {
   id: string;
@@ -23,14 +30,25 @@ export default function ProductPage({ product }: { product: ProductProps }) {
     <>
       <Seo />
       <Navbar />
-      <div>
-        <h1>{product.name}</h1>
-        <Image
-          src={product.images[0].url}
-          width={250}
-          height={250}
-          alt={`${product.slug}-image`}
-        />
+      <div className={s.product}>
+        <div className={s.product__images__container}>
+          <Slider images={product.images} />
+          <div className={s.product__images}>
+            {product.images.map((image) => (
+              <img
+                key={image.url}
+                src={image.url}
+                alt={product.name}
+                width="45%"
+              />
+            ))}
+          </div>
+        </div>
+        <div className={s.product__details}>
+          <h2 className={s.product__name}>{product.name}</h2>
+          <p>{product.description}</p>
+          <p>{product.price} COP</p>
+        </div>
       </div>
       <Footer />
     </>

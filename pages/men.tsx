@@ -1,12 +1,18 @@
-import { GetStaticProps } from "next";
-import React from "react";
-import { getAllProductsData } from "utils/next/getStaticProps/getAllProductsData";
-import { ProductProps } from "pages/product/[slug]";
 import Link from "next/link";
-import Navbar from "components/Navbar/Navbar";
-import Seo from "components/Seo";
 
+// GetStaticProps
+import { GetStaticProps } from "next";
+import { getAllProductsData } from "utils/next/getStaticProps/getAllProductsData";
+
+// ProductProps Interface
+import { ProductProps } from "pages/product/[slug]";
+
+// Styles
 import s from "../styles/Men.module.css";
+
+// Local Components
+import Seo from "components/Seo";
+import Navbar from "components/Navbar/Navbar";
 import Footer from "components/Footer/Footer";
 
 function men({ products }: { products: ProductProps[] }) {

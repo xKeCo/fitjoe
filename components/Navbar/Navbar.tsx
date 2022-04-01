@@ -5,7 +5,7 @@ import Link from "next/link";
 import s from "./Navbar.module.css";
 
 // NextUI Components
-import { Avatar } from "@nextui-org/react";
+// import { Avatar } from "@nextui-org/react";
 
 function Navbar() {
   return (
