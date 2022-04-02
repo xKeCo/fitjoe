@@ -5,7 +5,6 @@ import { ProductProps } from "pages/product/[slug]";
 
 export const getProductData: GetStaticProps = async ({ params }) => {
   const slug = params?.slug as string;
-
   try {
     const data: { products: ProductProps[] } = await client.request(
       productQuery,
@@ -13,7 +12,7 @@ export const getProductData: GetStaticProps = async ({ params }) => {
         slug,
       }
     );
-
+    console.log("Un solo dato", data);
     if (!data.products.length) {
       return {
         notFound: true,

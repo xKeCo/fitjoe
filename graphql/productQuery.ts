@@ -2,7 +2,7 @@ import { gql } from "graphql-request";
 
 export const productQuery = gql`
   query Product($slug: String!) {
-    products(where: { slug: $slug }) {
+    products(where: { slug: $slug }, stage: PUBLISHED) {
       id
       name
       slug
@@ -22,7 +22,7 @@ export const productQuery = gql`
 
 export const allProductQuery = gql`
   query {
-    products {
+    products(stage: PUBLISHED) {
       id
       name
       price

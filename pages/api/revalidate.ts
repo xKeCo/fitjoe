@@ -23,6 +23,7 @@ export default async function handler(
       req.body.operation === "unpublish" ||
       req.body.operation === "delete"
     ) {
+      console.log(req.body.operation);
       await res.unstable_revalidate(
         `/product/${req.body.data.localizations[0].slug}`
       );
