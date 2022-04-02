@@ -20,7 +20,8 @@ export default async function handler(
   try {
     if (
       req.body.operation === "publish" ||
-      req.body.operation === "unpublish"
+      req.body.operation === "unpublish" ||
+      req.body.operation === "delete"
     ) {
       await res.unstable_revalidate(
         `/product/${req.body.data.localizations[0].slug}`
